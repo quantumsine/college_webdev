@@ -1,0 +1,105 @@
+.gradients {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+
+}
+
+#gradient-animations {
+    display: grid;
+    grid-template-columns: repeat(3, 0.2fr);
+    gap: 20px;
+    padding: 10px;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.gradient-orange-yellow{
+    background: linear-gradient(to right, #f16b31, #ffdd37);
+}
+
+.gradient-blue{
+    background: linear-gradient(125deg, #1953e5, #52affc);
+}
+
+.radial-gradient{
+    background: radial-gradient(circle, #5480ea, #ffffff);
+}
+
+.linear-radial-combination{
+    background: radial-gradient(circle at top left, #f16b31, #e5a08b), linear-gradient(to bottom, #f16b31, #e5a08b);
+}
+
+.rotating-conic-gradient{
+    border-radius: 50%;
+    background: repeating-conic-gradient(
+            #ff0000 0deg 60deg,
+            #ff9900 60deg 120deg,
+            #ffff00 120deg 180deg,
+            #00ff00 180deg 240deg,
+            #0000ff 240deg 300deg,
+            #9900ff 300deg 360deg);
+
+    animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.hazard-pattern{
+    background: repeating-linear-gradient(45deg, #999, #999 10px, #555 10px, #555 20px);
+}
+
+
+.pulse-gradient{
+    background: radial-gradient(circle, #de3a3a, #9f0707);
+
+    animation: zoom 1s linear infinite;
+}
+
+@keyframes zoom {
+ 0% { transform: scale(1); }
+ 50% { transform: scale(1.2); }
+ 100% { transform: scale(1); }
+}
+
+.moving-gradient{
+    background: linear-gradient(
+            90deg,
+            #ff512f,
+            #dd2476,
+            #24c6dc,
+            #514a9d
+    );
+
+    background-size: 400% 400%;
+    animation: gradientMove 5s ease infinite;
+}
+
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.hover-gradient{
+    background: linear-gradient(#111111, #444);
+}
+
+.hover-gradient:hover{
+    background: linear-gradient(#5c1e9f, #a326d5);
+    cursor: pointer;
+    transition: all 2s ease-in-out;
+}
